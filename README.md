@@ -336,7 +336,7 @@ A HTML element (e.g. div) must also be created, which will act as a container fo
 
 `tracker.enableAI` bool, enable or disable tracking, default: `true`
 
-`tracker.enableVideo` bool, enable or disable draw video on cnvas, default: `true`
+`tracker.enableVideo` bool, enable or disable display original video on canvas, default: `true`
 
 `tracker.enable3D` bool, enable or disable 3D keypoints, default: `false`
 
