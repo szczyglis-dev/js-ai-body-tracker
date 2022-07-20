@@ -54,8 +54,10 @@ The repository includes a sample application illustrating the operation and use 
 First, you need to define two HTML elements: video and canvas:
 
 ```html
-<canvas id="canvas"></canvas>
-<video id="video"></video>
+<canvas id="canvas" width="500" height="500"></canvas>
+<video id="video" width="500" height="500">
+	<source src="">
+</video>
 ```
 Then you need to import the library and configure it:
 
