@@ -15,12 +15,12 @@ Javascript, current release: **1.0.0** build 2022-07-20
 - only one file, for direct import in your own application, no node.js required
 - uses `TensorFlow JS`, `ScatterGL` and `videoJS` libraries
 
-Real-time human pose detection in MP4 video:
+Real-time human pose estimation on MP4 video:
 
 ![gif1](https://user-images.githubusercontent.com/61396542/180048048-ebd4fdbe-9b0e-43a8-b34a-255bd092e366.gif)
 ![gif2](https://user-images.githubusercontent.com/61396542/180047990-523f6706-1241-4cd6-9114-8e1e887cce7f.gif)
 
-Real-time human pose detection in IPTV/m3u8 online stream:
+Real-time human pose estimation on IPTV/m3u8 online stream:
 
 ![gif3](https://user-images.githubusercontent.com/61396542/180048146-80cf69b3-26ac-4841-bbe5-7c16cc757491.gif)
 
