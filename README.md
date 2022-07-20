@@ -303,6 +303,28 @@ tracker.on('HOOK_TYPE', function(value) {
 	// do something with value
 });
 ```
+## 3D pose estimation
+
+To display the detected points in 3D space, turn on the "enable3D" option, as shown below:
+
+```js
+tracker.enable3D = true;
+```
+A HTML element (e.g. div) must also be created, which will act as a container for the 3D output. To do this, define the element as below:
+
+```html
+<body>
+	...
+	<div id="view_3d"></div>
+
+	<script>
+		tracker.el3D = '#view_3d';
+		tracker.enable3D = true;
+```
+
+3D keypoints are displayed using the `ScatterGL` library.
+
+![3dok](https://user-images.githubusercontent.com/61396542/180082333-e7793d65-5214-4354-bf61-97c3494a08ec.gif)
 
 **Options reference**
 
