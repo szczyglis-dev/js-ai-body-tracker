@@ -355,7 +355,8 @@ A HTML element (e.g. div) must also be created, which will act as a container fo
 `tracker.elVideo` string, HTML element for video, default: `#video`
 
 
-All options should be defined before calling `run()` method.
+
+The following options should be defined before calling `run()` method: `detectorModel`, `detectorConfig`, `elCanvas`, `elVideo`, `el3D`.
 
 
 ___
