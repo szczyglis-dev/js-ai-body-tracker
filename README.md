@@ -65,7 +65,6 @@ Then you need to import the library and configure it:
 	tracker.setModel('MoveNetSinglePoseLightning');	
 	tracker.elCanvas = '#canvas';
 	tracker.elVideo = '#video';
-	tracker.el3D = '#view_3d';
 	tracker.run('camera');
 </script>
 ```
