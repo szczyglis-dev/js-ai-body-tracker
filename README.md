@@ -1,42 +1,48 @@
-Javascript, current release: **1.0** build 2022-07-20
+Javascript, current release: **1.0.0** build 2022-07-20
 
-# JS AI BODY TRACKER 
+# JS AI BODY TRACKER - tracker.js
 
-**JS AI Body Tracker `(tracker.js)` is a library that implements machine learning-based models for image recognition and human movement analysis. Library is written in javascript, it doesn't require node.js. It supports 3 different models for detecting the human position on the video: MoveNet, PoseNet and BlazePose. Package offers real-time image analysis from three different image sources: web or smartphone camera, video files and online streaming (IPTV/m3u8).**
+**JS AI Body Tracker `(tracker.js)` is a library that implements machine learning-based models for image recognition and human movement analysis. Library is written in javascript, it doesn't require node.js. It supports 3 different models for detecting the human position on the video: `MoveNet`, `PoseNet` and `BlazePose`. Package offers real-time image analysis from three different image sources: web or smartphone camera, video files and online streaming (IPTV/m3u8).**
+
+More information about implemented neural networks: 
+https://github.com/tensorflow/tfjs-models/tree/master/pose-detection
 
 ## Features:
 
 - easy to implement in your own JS application
 - works in real-time directly in webbrowser
 - support for 3 different image sources: web camera, video files (mp4, mkv, avi, webm) and online stream (IPTV / m3u8)
-- 3 models of neural networks: MoveNet, PoseNet, BlazePose
+- 3 models of neural networks: `MoveNet`, `PoseNet`, `BlazePose`
 - real-time 3D mapping
 - can be easily extended with events / hooks
 - only one file, for direct import in your own application, no node.js required
-- uses TensorFlow JS, ScatterGL and videoJS libraries
+- uses `TensorFlow JS`, `ScatterGL` and `videoJS` libraries
+
+Detecting human pose in MP4 video in real-time:
+
+![gif1](https://user-images.githubusercontent.com/61396542/180048048-ebd4fdbe-9b0e-43a8-b34a-255bd092e366.gif)
+![gif2](https://user-images.githubusercontent.com/61396542/180047990-523f6706-1241-4cd6-9114-8e1e887cce7f.gif)
+
+Detecting human pose in online IPTV/m3u8 stream in real-time:
+
+![gif3](https://user-images.githubusercontent.com/61396542/180048146-80cf69b3-26ac-4841-bbe5-7c16cc757491.gif)
 
 
 ## Online demo
 
-A demo of a real-time working sample application using the library can be seen at:
+A demo of a real-time working sample application using the library is here:
+## https://szczyglis.dev/js-ai-body-tracker
 
-https://szczyglis.dev/js-ai-body-tracker
 
-
-There are 3 input video sources available in the demo application: camera, video film and IPTV / m3u8 stream.
+There are 3 input video sources available in the demo application: camera, video film and IPTV / m3u8 stream. 
 The entire process of image analysis takes place in real-time.
-
-
-gifs
-
-
 
 ## Basic usage:
 
 ```js
 // javascript
 
-tracker.setModel('PoseNet'); // define model to use
+tracker.setModel('MoveNetSinglePoseLightning'); // define model to use
 
 tracker.el3D = '#view_3d'; // define HTML container 
 tracker.elCanvas = '#canvas'; // define HTML canvas container
@@ -46,7 +52,7 @@ tracker.run('camera'); // run
 ```
 The repository includes a sample application illustrating the operation and use of the library.
 
-## Documentation
+## Usage step by step
 
 First, you need to define two HTML elements: video and canvas:
 
@@ -59,17 +65,17 @@ Then you need to import the library and configure it:
 ```html
 <script src="./js/tracker.js"></script>
 <script>
-	tracker.setModel('PoseNet');
-	tracker.el3D = '#view_3d';
+	tracker.setModel('MoveNetSinglePoseLightning');	
 	tracker.elCanvas = '#canvas';
 	tracker.elVideo = '#video';
+	tracker.el3D = '#view_3d';
 	tracker.run('camera');
 </script>
 ```
 
 ### Examples of use
 
-**1) Webcam / smartphone camera**
+**1) VIDEO INPUT: webcam / smartphone camera**
 
 ```html
 <!DOCTYPE html>
@@ -77,40 +83,38 @@ Then you need to import the library and configure it:
 <head>
 </head>
 <body>
+<div class="container">
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<video id="video" width="500" height="500" style="display:none">
+		<source src="">
+	</video>				
+</div>
 
-	<div class="container">
-		<canvas id="canvas" width="500" height="500"></canvas>
-		<video id="video" width="500" height="500" style="display:none">
-			<source src="">
-		</video>				
-	</div>
+<!-- Load Tensor Flow -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
 
-	<!-- Load Tensor Flow -->
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+<!-- Load three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<!-- Load scatter-gl.js -->
+<script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
 
-	<!-- Load three.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-	<!-- Load scatter-gl.js -->
-	<script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
-
-	<!-- Load tracker.js -->
-	<script src="./js/tracker.js"></script>
-
-	<script>
-		tracker.setModel('MoveNetSinglePoseLightning');
-	    tracker.elCanvas = '#canvas';
-	    tracker.elVideo = '#video';
-		tracker.run('camera');
-	</script>
+<!-- Load tracker.js -->
+<script src="./js/tracker.js"></script>
+<script>
+	tracker.setModel('MoveNetSinglePoseLightning');
+	tracker.elCanvas = '#canvas';
+	tracker.elVideo = '#video';
+	tracker.run('camera');
+</script>
 </body>
 </html>
 ```
 The above code activates the camera and initializes the model detecting the human position, and then displays the points detected on the video from camera on the canvas element.
 
-**2) Video file (mp4, mkv, webp)**
+**2) VIDEO INPUT: movie file (mp4, mkv, webp)**
 
 ```html
 <!DOCTYPE html>
@@ -118,40 +122,38 @@ The above code activates the camera and initializes the model detecting the huma
 <head>
 </head>
 <body>
+<div class="container">
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<video id="video" width="500" height="500" style="display:none">
+		<source src="movie.mp4">
+	</video>				
+</div>
 
-	<div class="container">
-		<canvas id="canvas" width="500" height="500"></canvas>
-		<video id="video" width="500" height="500" style="display:none">
-			<source src="movie.mp4">
-		</video>				
-	</div>
+<!-- Load Tensor Flow -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
 
-	<!-- Load Tensor Flow -->
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+<!-- Load three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<!-- Load scatter-gl.js -->
+<script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
 
-	<!-- Load three.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-	<!-- Load scatter-gl.js -->
-	<script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
-
-	<!-- Load tracker.js -->
-	<script src="./js/tracker.js"></script>
-
-	<script>
-		tracker.setModel('MoveNetSinglePoseLightning');
-	    tracker.elCanvas = '#canvas';
-	    tracker.elVideo = '#video';
-		tracker.run('video');
-	</script>
+<!-- Load tracker.js -->
+<script src="./js/tracker.js"></script>
+<script>
+	tracker.setModel('MoveNetSinglePoseLightning');
+	tracker.elCanvas = '#canvas';
+	tracker.elVideo = '#video';
+	tracker.run('video');
+</script>
 </body>
 </html>
 ```
 The above code loads the movie `movie.mp4` and initializes the human position analysis model, then displays the points detected on the video in real time, superimposing them on the input video.
 
-**3) Online stream (IPTV/m3u8)**
+**3) VIDEO INPUT: online stream (IPTV/m3u8)**
 
 ```html
 <!DOCTYPE html>
@@ -161,38 +163,36 @@ The above code loads the movie `movie.mp4` and initializes the human position an
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.0/video.min.js"></script>
 </head>
 <body>
+<div class="container">
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<video id="video" class="video-js vjs-fluid vjs-default-skin" preload="metadata" width="500" height="500" style="display:none">
+		<source src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8">
+	</video>				
+</div>
 
-	<div class="container">
-		<canvas id="canvas" width="500" height="500"></canvas>
-		<video id="video" class="video-js vjs-fluid vjs-default-skin" preload="metadata" width="500" height="500" style="display:none">
-			<source src="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8">
-		</video>				
-	</div>
+<!-- Load Tensor Flow -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
 
-	<!-- Load Tensor Flow -->
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+<!-- Load three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<!-- Load scatter-gl.js -->
+<script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
 
-	<!-- Load three.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-	<!-- Load scatter-gl.js -->
-	<script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
-
-	<!-- Load tracker.js -->
-	<script src="./js/tracker.js"></script>
-
-	<script>
-		tracker.setModel('MoveNetSinglePoseLightning');
-	    tracker.elCanvas = '#canvas';
-	    tracker.elVideo = '#video';
-		tracker.run('stream');
-	</script>
+<!-- Load tracker.js -->
+<script src="./js/tracker.js"></script>
+<script>
+	tracker.setModel('MoveNetMultiPoseLightning');
+	tracker.elCanvas = '#canvas';
+	tracker.elVideo = '#video';
+	tracker.run('stream');
+</script>
 </body>
 </html>
 ```
-The above code loads the stream from the address `https: // multiplatform-f.akamaihd.net / i / multi / will / bunny / big_buck_bunny_, 640x360_400,640x360_700,640x360_1000,950x540_1500, .f4v.csmil / master.m3u8` and initiates the detection model the position of the human, and then displays the points detected in the image in the canvas element superimposed on the stream image. Note that the videoJS library is used to handle the stream.
+The above code opens .m3u8 online video stream and initiates the detection model the position of the human, and then displays the points detected in the image in the canvas element superimposed on the stream image. **Note that the videoJS library is used to handle the stream.**
 
 
 ### Configuration
@@ -242,14 +242,16 @@ You can define 3 different video sources:
 - `video`
 - `stream`
 
-To select a source, call the method `run ()` with the name of the source, e.g .:
+To select a source, call the method `run()` with the name of the source as argument, e.g .:
 
 ```js
-ajbt.run('camera') // runs camera
-
-ajbt.run('video') // runs video, e.g. mp4 clip
-
-ajbt.run('stream') // runs video from m3u8 online stream
+tracker.run('camera') // takes video from webcam
+```
+```js
+tracker.run('video') // takes video from movie file (e.g. mp4)
+```
+```js
+tracker.run('stream') // takes video from m3u8 online stream
 ```
 
 **HTML elements configuration**
@@ -267,8 +269,8 @@ tracker.el3D = '#view_3d';
 You can define the size of points displayed on the image:
 
 ```js
-tracker.pointWidth = 6; // szerokość rysowanej kości/połączenia między punktami
-tracker.pointRadius = 8; // promień okręgu symbolizującego punkt
+tracker.pointWidth = 6; // points connection width
+tracker.pointRadius = 8; // point circle radius
 ```
 
 **Events / hooks**
@@ -296,7 +298,7 @@ You can define hooks for 4 types of events:
 `videoerror` - hook executes when video/stream error occured
 
 
-Defining a Hook is as follows:
+Defining a hook is as follows:
 
 ```js
 tracker.on('HOOK_TYPE', function(value) {
@@ -308,14 +310,8 @@ tracker.on('HOOK_TYPE', function(value) {
 
 `tracker.detectorModel` - detector instance, default: `poseDetection.SupportedModels.MoveNet`
 
-`tracker.detectorConfig` - detector config, default: 
-`{
-    modelType: poseDetection.movenet.modelType.MULTIPOSE_LIGHTNING,
-    enableSmoothing: true,
-    multiPoseMaxDimension: 256,
-    enableTracking: true,
-    trackerType: poseDetection.TrackerType.BoundingBox
-},`
+`tracker.detectorConfig` - detector config
+
 `tracker.autofit` bool, enable autofit/rescale points on canvas CSS auto-scaling, default: `false`
 
 `tracker.enableAI` bool, enable or disable tracking, default: `true`
@@ -344,9 +340,9 @@ All options must be defined before calling `run()` method.
 
 ___
 
-## Live Demo: https://szczyglis.dev/js-ai-body-tracker
+## Live demo: https://szczyglis.dev/js-ai-body-tracker
 
-iiiiiiiiii
+![demo_www](https://user-images.githubusercontent.com/61396542/180053192-4342567b-1cab-49bb-813d-b96f3a337f5e.jpg)
 
 
 # Changelog
