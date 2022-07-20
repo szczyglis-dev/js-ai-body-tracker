@@ -5,8 +5,8 @@
 // Version: 1.0.0
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
-const tracker = {
 
+const tracker = {
     // config options
     detectorModel: poseDetection.SupportedModels.MoveNet, // detector model
     detectorConfig: { // detector configuration
@@ -36,7 +36,7 @@ const tracker = {
     el3D: '#view_3d', // HTML element for 3D keypoint
     elCanvas: '#canvas', // HTML element for canvas
     elVideo: '#video', // HTML element for video
-
+    
     // internals
     detector: null, // tensor flow detector instance
     reqID: null, // requested frame ID
@@ -1192,12 +1192,10 @@ const tracker = {
         Handle poses and draw them on canvas
      */
     handlePoses: function() {
-
         // run user defined hooks
         tracker.dispatch('beforeupdate', tracker.poses);
 
         if (tracker.poses && tracker.poses.length > 0) {
-
             let pathlist;
 
             // get corrent pathlist for specified neural net
@@ -1211,7 +1209,6 @@ const tracker = {
                     break;
             }
 
-
             let point, score;
 
             // loop on all finded poses
@@ -1219,9 +1216,9 @@ const tracker = {
 
                 // loop on pathslist
                 for (let k in pathlist) {
-
+                    
                     if (pathlist.hasOwnProperty(k)) {
-
+                        
                         // if there is no required threeshold (score) then next
                         if (!tracker.hasScore(pathlist[k], pose)) {
                             continue;
