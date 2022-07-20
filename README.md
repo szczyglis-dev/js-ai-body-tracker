@@ -41,9 +41,9 @@ The entire process of image analysis takes place in real-time.
 
 tracker.setModel('MoveNetSinglePoseLightning'); // define model to use
 
-tracker.el3D = '#view_3d'; // define HTML container 
 tracker.elCanvas = '#canvas'; // define HTML canvas container
 tracker.elVideo = '#video'; // define HTML video container
+tracker.el3D = '#view_3d'; // define HTML container for 3D view 
 
 tracker.run('camera'); // run
 ```
