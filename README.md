@@ -31,7 +31,7 @@ A demo of a real-time working sample application using the library is here:
 ## https://szczyglis.dev/js-ai-body-tracker
 
 
-There are 3 input video sources available in the demo application: camera, video film and IPTV / m3u8 stream. 
+There are 3 input video sources available in the demo application: webcamera, video file and IPTV/m3u8 stream. 
 The entire process of image analysis takes place in real-time.
 
 ## Basic usage:
