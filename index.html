@@ -1,0 +1,178 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS AI Body Tracker v1.0</title>
+	<link href="data:image/x-icon;base64,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"
+          rel="icon" type="image/x-icon"/>
+    <meta name="description"
+          content="JS AI Body Tracker - javascript library implementing body tracking with ANN models: MoveNet, PoseNet and Blase Pose"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="og:site_name" content="JS AI Body Tracker"/>
+    <meta name="og:type" content="website"/>
+    <meta name="og:title" content="JS AI Body Tracker"/>
+    <meta name="og:description"
+          content="JS AI Body Tracker - javascript library implementing body tracking with ANN models: MoveNet, PoseNet and Blase Pose"/>
+    <meta name="og:url" content="https://szczyglis.dev/js-ai-body-tracker"/>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.0/video-js.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.0/video.min.js"></script>
+</head>
+
+<body>
+	<div class="gh">
+	    <div class="demo version-section"><a target="_blank" href="https://github.com/js-ai-body-tracker"
+	                                         class="github-corner" aria-label="View source on GitHub">
+	            <svg width="80" height="80" viewBox="0 0 250 250"
+	                 style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+	                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+	                <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+	                      fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+	                <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+	                      fill="currentColor" class="octo-body"></path>
+	            </svg>
+	        </a>
+	    </div>
+	</div>
+	<div id="controls">
+		<form method="GET">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<button type="button" id="source-camera" class="source-select btn btn-primary" data-source="camera" >WEBCAM</button>  
+						<button type="button" id="source-video" class="source-select btn btn-primary" data-source="video" >VIDEO</button>  
+						<button type="button" id="source-stream" class="source-select btn btn-primary" data-source="stream">STREAM (IPTV / m3u8)</button>
+					</div>
+					<div class="col-md-6">
+						<div class="input-group mb-2">
+					        <div class="input-group-prepend">
+					          <div class="input-group-text">
+					          	<span>MODEL</span>
+					          </div>
+					      	</div>
+					     	<select name="model" id="model_select" class="form-control d-inline-block">
+								<option value="MoveNetSinglePoseLightning">2D only (FAST) singlepose (faster) / MoveNet </option>
+								<option value="MoveNetSinglePoseThunder">2D only (FAST) singlepose (slower) / MoveNet </option>
+								<option value="MoveNetMultiPoseLightning">2D only (FAST) multipose / MoveNet</option>
+								<option value="PoseNetMobileNetV1">2D only (SLOW) singlepose (faster) / PoseNet-MobileNetV1 </option>
+								<option value="PoseNetResNet50">2D only (SLOW) singlepose (slower) / PoseNet-ResNet50</option>
+								<option value="BlazePoseLite">2D + 3D singlepose (faster) / BlazePose</option>
+								<option value="BlazePoseHeavy">2D + 3D singlepose (slower) / BlazePose</option>
+								<option value="BlazePoseFull">2D + 3D singlepose (optimal) / BlazePose</option>
+							</select>
+				     	</div>						
+					</div>
+				</div>
+			</div>
+		</form>	
+
+		<button id="btn_toggle_ai" class="btn btn-secondary">AI TRACKING ON/OFF</button>
+		<button id="btn_toggle_video" class="btn btn-secondary">VIDEO ON/OFF</button>			
+		<button id="btn_toggle_3d" class="btn btn-secondary">3D VIEW ON/OFF</button>
+		<button id="btn_toggle_debug" class="btn btn-secondary">DEBUG ON/OFF</button>
+
+		<div id="video_src_area" style="display:none" class="text-center mt-3">
+			<div class="container justify-content-center">
+				<form class="form-horizontal" onsubmit="return false;">
+					<div class="form-row justify-content-center">
+					  	<div class="col-10 text-right">
+					  		<div class="input-group mb-2">
+						        <div class="input-group-prepend">
+						          <div class="input-group-text">
+						          	<span id="video_src_prefix"></span>
+						          </div>
+						      	</div>
+					     	<input class="form-control" id="video_src" type="text" value="">
+					     	</div>
+					     </div>	
+					     <div class="col-auto">
+					      	<button id="btn_load_src" class="btn btn-primary">LOAD</button>
+					     </div>	
+					</div>
+				</form>	
+			</div>
+			<div class="mt-2 text-center">
+				<b>Tip:</b> click on "PLAY" icon to play or change video source URL and click "LOAD" button.
+			</div>
+		</div>
+	</div>
+	<button id="btn_toggle_controls" class="btn btn-primary">SHOW/HIDE CONTROLS</button>
+
+	<div class="mt-2 text-center" id="status"></div>
+
+	<div id="wrapper" class="container-fluid">		
+	  <canvas id="canvas"></canvas>
+	  <video id="video" class="video-js vjs-fluid vjs-default-skin" preload="metadata">
+	  	<source src="">
+	  </video>
+	  <div id="info_debug"></div>
+	  <div id="info_counter"></div>
+	</div>
+	<div id="view_3d"></div>
+	<div class="footer"><b>JS AI BODY TRACKER</b> v.1.0 | © 2022 Marcin "szczyglis" Szczyglinski | <a href="https://github.com/js-ai-body-tracker" target="_blank">GitHUB</a></div>
+
+	<!-- Load Tensor Flow -->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+
+	<!-- Load three.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+	<!-- Load scatter-gl.js -->
+	<script src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
+
+	<!-- Load tracker.js and app.js-->
+	<script src="./js/app.js"></script>
+	<script src="./js/tracker.js"></script>
+	<script>
+
+		let source = 'camera'; // camera|video|stream		
+		let sourceVideo = '';
+		let defaultVideo = 'mp4/whatislove.mp4';
+		let defaultStream = 'https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8';
+		let model = 'MoveNetSinglePoseLightning';
+		/*
+			^^^ available pre-defined models:
+				
+				- MoveNetSinglePoseLightning				
+				- MoveNetSinglePoseThunder
+				- MoveNetMultiPoseLightning
+				- PoseNetMobileNetV1
+				- PoseNetResNet50
+				- BlazePoseLite
+				- BlazePoseHeavy
+				- BlazePoseFull
+		 */
+
+		// initialize app
+		app.init();
+		
+		// initialize AI tracker model
+		tracker.setModel(model);
+		tracker.autofit = true; // enable auto resize/fit
+
+		// set-up hooks
+		tracker.on('statuschange', function(msg) {
+			app.updateStatus(msg);
+        });
+		tracker.on('beforeupdate', function(poses) {
+			app.updateDebug(poses);
+			app.updateCounter(poses);
+		});
+
+		// config		
+	    tracker.elCanvas = '#canvas';
+	    tracker.elVideo = '#video';
+	    tracker.el3D = '#view_3d';
+	    tracker.pointWidth = 6;
+    	tracker.pointRadius = 8;
+
+		// run predictions
+		tracker.run(source);
+	</script>
+</body>
+</html>
