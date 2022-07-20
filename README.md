@@ -4,7 +4,7 @@ Javascript, current release: **1.0.0** build 2022-07-20
 
 **JS AI Body Tracker `(tracker.js)` is a library that implements machine learning-based models for human pose estimation and human movement analysis. Library is written in javascript, it doesn't require node.js. It supports 3 different models for detecting the human pose on the video: `MoveNet`, `PoseNet` and `BlazePose`. Library offers real-time video analysis from three different video sources: web/smartphone camera, video files (mp4, mkv, avi, webm) and online streaming (IPTV/m3u8).**
 
-## Features:
+## Features
 
 - easy to implement in your own JS application
 - works in real-time directly in browser
@@ -34,7 +34,7 @@ A demo of a real-time working sample application using the library is here:
 There are 3 input video sources available in the demo application: webcamera, video file and IPTV/m3u8 stream. 
 The entire process of image analysis takes place in real-time.
 
-## Basic usage:
+## Basic usage
 
 ```js
 // javascript
