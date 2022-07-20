@@ -5,12 +5,10 @@
 // Version: 1.0.0
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
+
 const app = {
-
     debug: false, // bool, enable/disable debug
-
     init: function() {
-
         // get selected model name from URL query string
         const params = new URLSearchParams(window.location.search);
         if (params.has('model')) {
