@@ -10,7 +10,7 @@ https://github.com/tensorflow/tfjs-models/tree/master/pose-detection
 ## Features:
 
 - easy to implement in your own JS application
-- works in real-time directly in webbrowser
+- works in real-time directly in browser
 - works with multiple video sources: web camera, video files (mp4, mkv, avi, webm), online stream (IPTV / m3u8)
 - 3 different neural network models: `MoveNet`, `PoseNet`, `BlazePose`
 - real-time 3D mapping (BlazePose)
