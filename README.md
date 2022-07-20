@@ -305,7 +305,7 @@ tracker.on('HOOK_TYPE', function(value) {
 ```
 **3D pose estimation**
 
-To display the detected points in 3D space, turn on the "enable3D" option, as shown below:
+To display the detected points in 3D space, turn on the `enable3D` option, as shown below:
 
 ```js
 tracker.enable3D = true;
