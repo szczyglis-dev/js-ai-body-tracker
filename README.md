@@ -25,7 +25,7 @@ Real-time human pose detection in IPTV/m3u8 online stream:
 ![gif3](https://user-images.githubusercontent.com/61396542/180048146-80cf69b3-26ac-4841-bbe5-7c16cc757491.gif)
 
 
-## Online demo
+## Live demo
 
 A demo of a real-time working sample application using the library is here:
 ## https://szczyglis.dev/js-ai-body-tracker
