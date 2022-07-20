@@ -240,7 +240,7 @@ You can define 3 different video sources:
 - `video`
 - `stream`
 
-To select a source, call the method `run()` with the name of the source as argument, e.g .:
+To select a source, call the method `run()` with the source name passed as argument, e.g .:
 
 ```js
 tracker.run('camera') // takes video from webcam
