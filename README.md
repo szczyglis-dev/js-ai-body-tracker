@@ -252,7 +252,7 @@ tracker.run('video') // takes video from movie file (e.g. mp4)
 tracker.run('stream') // takes video from m3u8 online stream
 ```
 
-**HTML elements configuration**
+**DOM elements configuration**
 
 You need to define elements for video, canvas and for 3D output (only available for BlazePose model). To do this, set the appropriate values:
 
@@ -264,7 +264,7 @@ tracker.el3D = '#view_3d';
 
 **Display settings**
 
-You can define the size of points displayed on the image:
+You can define the size of points drawed on canvas:
 
 ```js
 tracker.pointWidth = 6; // points connection width
@@ -273,7 +273,7 @@ tracker.pointRadius = 8; // point circle radius
 
 **Events / hooks**
 
-You can define your own functions that will handle, for example, points in the image detected by the neural network, the event / hook system is used for this. To define a hook, use the `on` method. For example, to define a Hook that will display all detected points in real-time live, write the following code:
+You can define your own functions that will handle, for example, points in the image detected by the neural network, the event / hook system is used for this. To define a hook, use the `on()` method. For example, to define a hook that will display all detected points in real-time live, write the following code:
 
 ```js
 tracker.on('beforeupdate', function(poses) {
@@ -333,7 +333,7 @@ tracker.on('HOOK_TYPE', function(value) {
 `tracker.elVideo` string, HTML element for video, default: `#video`
 
 
-All options must be defined before calling `run()` method.
+All options should be defined before calling `run()` method.
 
 
 ___
@@ -343,11 +343,11 @@ ___
 ![demo_www](https://user-images.githubusercontent.com/61396542/180053192-4342567b-1cab-49bb-813d-b96f3a337f5e.jpg)
 
 
-# Changelog
+## Changelog
 **- 1.0.0** - published first release (2022-07-20)
 
 
-# Credits
+## Credits
  
 ### JS AI BODY TRACKER is free to use but if you liked then you can donate project via BTC: 
 
