@@ -18,7 +18,7 @@ const tracker = {
     },
     autofit: false, // bool, enable autofit on canvas scaling
     enableAI: true, // bool, enable or disable tracking
-    enableVideo: true, // bool, enable or disable draw video on cnvas
+    enableVideo: true, // bool, enable or disable display original video on canvas on canvas
     enable3D: false, // bool, enable or disable 3D keypoints
     pointWidth: 6, // width of line between points
     pointRadius: 8, // point circle radius
@@ -57,7 +57,7 @@ const tracker = {
     scatterGL: null, // ScatterGL instance
     scatterGLEl: null, // DOMElement with ScatterGL container
     scatterGLInitialized: false, // bool, ScatterGL initialization state
-    videoJS: null, // videoJS intance 
+    videoJS: null, // videoJS instance 
     paths: {
         // paths between points configuration
         'movenet_posenet': {
