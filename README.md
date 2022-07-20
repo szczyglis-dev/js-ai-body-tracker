@@ -2,7 +2,7 @@ Javascript, current release: **1.0.0** build 2022-07-20
 
 # JS AI BODY TRACKER - tracker.js
 
-**JS AI Body Tracker `(tracker.js)` is a library that implements machine learning-based models for image recognition and human movement analysis. Library is written in javascript, it doesn't require node.js. It supports 3 different models for detecting the human position on the video: `MoveNet`, `PoseNet` and `BlazePose`. Package offers real-time image analysis from three different image sources: web or smartphone camera, video files and online streaming (IPTV/m3u8).**
+**JS AI Body Tracker `(tracker.js)` is a library that implements machine learning-based models for human pose estimation and human movement analysis. Library is written in javascript, it doesn't require node.js. It supports 3 different models for detecting the human position on the video: `MoveNet`, `PoseNet` and `BlazePose`. Package offers real-time video analysis from three different video sources: web/smartphone camera, video files (mp4, mkv, webm) and online streaming (IPTV/m3u8).**
 
 More information about implemented neural networks: 
 https://github.com/tensorflow/tfjs-models/tree/master/pose-detection
@@ -11,9 +11,9 @@ https://github.com/tensorflow/tfjs-models/tree/master/pose-detection
 
 - easy to implement in your own JS application
 - works in real-time directly in webbrowser
-- support for 3 different image sources: web camera, video files (mp4, mkv, avi, webm) and online stream (IPTV / m3u8)
+- works with multiple video sources: web camera, video files (mp4, mkv, avi, webm), online stream (IPTV / m3u8)
 - 3 models of neural networks: `MoveNet`, `PoseNet`, `BlazePose`
-- real-time 3D mapping
+- real-time 3D mapping (BlazePose)
 - can be easily extended with events / hooks
 - only one file, for direct import in your own application, no node.js required
 - uses `TensorFlow JS`, `ScatterGL` and `videoJS` libraries
