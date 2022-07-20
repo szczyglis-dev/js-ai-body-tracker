@@ -108,7 +108,7 @@ Then you need to import the library and configure it:
 </body>
 </html>
 ```
-The above code activates the camera and initializes the model detecting the human position, and then displays the points detected on the video from camera on the canvas element.
+The above code activates the camera and initializes the model detecting the human pose, and then displays the points detected on the video from camera on the canvas element in real-time, superimposing them on the input from webcamera.
 
 **2) VIDEO INPUT: movie file (mp4, mkv, webp)**
 
@@ -147,7 +147,7 @@ The above code activates the camera and initializes the model detecting the huma
 </body>
 </html>
 ```
-The above code loads the movie `movie.mp4` and initializes the human position analysis model, then displays the points detected on the video in real time, superimposing them on the input video.
+The above code loads the movie `movie.mp4` and initializes the human pose analysis model, then displays the points detected on the video in real time on canvas, superimposing them on the input video.
 
 **3) VIDEO INPUT: online stream (IPTV/m3u8)**
 
@@ -188,7 +188,7 @@ The above code loads the movie `movie.mp4` and initializes the human position an
 </body>
 </html>
 ```
-The above code opens .m3u8 online video stream and initiates the detection model the position of the human, and then displays the points detected in the image in the canvas element superimposed on the stream image. **Note that the videoJS library is used to handle the stream.**
+The above code opens .m3u8 online video stream and initiates the human pose detection model, and then displays the points detected on video stream superimposed on the stream image in the canvas element in real-time. **Note that the videoJS library is used to handle the stream.**
 
 
 ### Configuration
