@@ -112,7 +112,7 @@ Then you need to import the library and configure it:
 ```
 The above code activates the camera and initializes the model detecting the human pose, and then displays the points detected on the video from camera on the canvas element in real-time, superimposing them on the input from webcamera.
 
-**2) VIDEO INPUT: movie file (mp4, mkv, avi, webp)**
+**2) VIDEO INPUT: movie file (mp4, mkv, avi, webm)**
 
 ```html
 <!DOCTYPE html>
