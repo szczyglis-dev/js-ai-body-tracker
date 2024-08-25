@@ -370,15 +370,10 @@ ___
 **- 1.0.0** - published first release (2022-07-20)
 
 
-## Credits
- 
-### JS AI BODY TRACKER is free to use but if you liked then you can donate project via BTC: 
+--- 
+**JS AI Body Tracker is free to use, but if you like it, you can support my work by buying me a coffee ;)**
 
-**14X6zSCbkU5wojcXZMgT9a4EnJNcieTrcr**
-
-or by PayPal:
- **[https://www.paypal.me/szczyglinski](https://www.paypal.me/szczyglinski)**
-
+https://www.buymeacoffee.com/szczyglis
 
 **Enjoy!**
 
