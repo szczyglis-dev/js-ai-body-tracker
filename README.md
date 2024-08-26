@@ -1,21 +1,20 @@
-Javascript / TensorFlow JS, current release: **1.0.0** build 2022-07-20
+Release: **1.0.1** | build: **2024.08.26** | Javascript / TensorFlow JS
 
 # JS AI BODY TRACKER - tracker.js
 
-**JS AI Body Tracker `(tracker.js)` is a javascript library that implements machine learning-based models for human pose estimation and human movement analysis. Library is written in javascript, it doesn't require node.js. It supports 3 different models for detecting the human pose on the video: `MoveNet`, `PoseNet` and `BlazePose`. Library offers real-time video analysis from three different video sources: web/smartphone camera, video files (mp4, mkv, avi, webm) and online streaming (IPTV/m3u8).**
-
+**JS AI Body Tracker `(tracker.js)` is a JavaScript library that implements machine learning-based models for human pose estimation and movement analysis. The library is written in JavaScript and does not require Node.js. It supports three different models for detecting human poses in videos: `MoveNet`, `PoseNet`, and `BlazePose`. The library offers real-time video analysis from three different sources: web/smartphone cameras, video files (mp4, mkv, avi, webm), and online streaming (IPTV/m3u8).**
 ## Features
 
-- easy to implement in your own JS application
-- works in real-time directly in browser
-- works with multiple video sources: web camera, video files (mp4, mkv, avi, webm), online stream (IPTV/m3u8)
-- 3 different neural network models: `MoveNet`, `PoseNet`, `BlazePose`
-- real-time 3D mapping (BlazePose)
-- can be easily extended with events / hooks
-- only one file, for direct import in your own application, no node.js required
-- uses `TensorFlow JS`, `ScatterGL` and `videoJS` libraries
+- Easy to implement in your own JavaScript application
+- Works in real-time directly in the browser
+- Supports multiple video sources: web cameras, video files (mp4, mkv, avi, webm), online streams (IPTV/m3u8)
+- Offers three different neural network models: `MoveNet`, `PoseNet`, and `BlazePose`
+- Provides real-time 3D mapping (BlazePose)
+- Can be easily extended with events and hooks
+- Consists of only one file for direct import into your application; no Node.js required
+- Uses `TensorFlow JS`, `ScatterGL`, and `videoJS` libraries
 
-Real-time human pose estimation on MP4 video:
+Real-time Human Pose Estimation on MP4 Video:
 
 ![gif1](https://user-images.githubusercontent.com/61396542/180048048-ebd4fdbe-9b0e-43a8-b34a-255bd092e366.gif)
 ![gif2](https://user-images.githubusercontent.com/61396542/180047990-523f6706-1241-4cd6-9114-8e1e887cce7f.gif)
@@ -27,12 +26,12 @@ Real-time human pose estimation on IPTV/m3u8 online stream:
 
 ## Live demo
 
-A demo of a real-time working sample application using the library is here:
+A demo of a real-time working sample application using the library can be found here:
+
 ## https://szczyglis.dev/js-ai-body-tracker
 
 
-There are 3 input video sources available in the demo application: webcamera, video file and IPTV/m3u8 stream. 
-The entire process of image analysis takes place in real-time.
+There are three input video sources available in the demo application: web camera, video file, and IPTV/m3u8 stream. The entire process of image analysis takes place in real-time.
 
 ## Basic usage
 
@@ -47,11 +46,11 @@ tracker.el3D = '#view_3d'; // define HTML container for 3D view
 
 tracker.run('camera'); // run
 ```
-The repository includes a sample application illustrating the operation and use of the library.
+The repository includes a sample application that illustrates the operation and use of the library.
 
 ## Usage step by step
 
-First, you need to define two HTML elements: video and canvas:
+First, you need to define two HTML elements: a video and a canvas:
 
 ```html
 <canvas id="canvas" width="500" height="500"></canvas>
@@ -59,7 +58,7 @@ First, you need to define two HTML elements: video and canvas:
 	<source src="">
 </video>
 ```
-Then you need to import the library and configure it:
+Next, you need to import the library and configure it:
 
 ```html
 <script src="./js/tracker.js"></script>
@@ -73,7 +72,7 @@ Then you need to import the library and configure it:
 
 ### Examples of use
 
-**1) VIDEO INPUT: webcam / smartphone camera**
+**1) VIDEO INPUT: Webcam / Smartphone Camera**
 
 ```html
 <!DOCTYPE html>
@@ -110,9 +109,9 @@ Then you need to import the library and configure it:
 </body>
 </html>
 ```
-The above code activates the camera and initializes the model detecting the human pose, and then displays the points detected on the video from camera on the canvas element in real-time, superimposing them on the input from webcamera.
+The above code activates the camera, initializes the model for detecting human poses, and then displays the detected points on the video from the camera on the canvas element in real time, superimposing them on the input from the webcam.
 
-**2) VIDEO INPUT: movie file (mp4, mkv, avi, webm)**
+**2) VIDEO INPUT: Movie File (mp4, mkv, avi, webm)**
 
 ```html
 <!DOCTYPE html>
@@ -149,9 +148,9 @@ The above code activates the camera and initializes the model detecting the huma
 </body>
 </html>
 ```
-The above code loads the movie `movie.mp4` and initializes the human pose analysis model, then displays the points detected on the video in real time on canvas, superimposing them on the input video.
+The above code loads the movie `movie.mp4`, initializes the human pose analysis model, and then displays the detected points on the video in real time on the canvas, superimposing them on the input video.
 
-**3) VIDEO INPUT: online stream (IPTV/m3u8)**
+**3) VIDEO INPUT: Online Stream (IPTV/m3u8)**
 
 ```html
 <!DOCTYPE html>
@@ -190,20 +189,18 @@ The above code loads the movie `movie.mp4` and initializes the human pose analys
 </body>
 </html>
 ```
-The above code opens .m3u8 online video stream and initiates the human pose detection model, and then displays the points detected on video stream superimposed on the stream image in the canvas element in real-time. **Note that the videoJS library is used to handle the stream.**
-
+The above code opens an `.m3u8` online video stream, initializes the human pose detection model, and then displays the detected points on the video stream superimposed on the stream image in the canvas element in real-time. **Note that the `videoJS` library is used to handle the stream.**
 
 ### Configuration
 
 **Model**
 
-The library has preconfigured settings for 3 different neural network models, you can use these settings or define all options manually. To use the predefined model, use the `setModel()` method:
-
+The library has preconfigured settings for three different neural network models. You can use these settings or define all options manually. To use the predefined model, use the `setModel()` method:
 ```js
 tracker.setModel('MoveNetSinglePoseLightning');
 ```
 
-**Available models:**
+**Available models**
 
 - `MoveNetSinglePoseLightning`			
 - `MoveNetSinglePoseThunder`
@@ -214,8 +211,7 @@ tracker.setModel('MoveNetSinglePoseLightning');
 - `BlazePoseHeavy`
 - `BlazePoseFull`
 
-You can also define the settings manually, e.g. MoveNet network and the "multipose" settings:
-
+You can also define the settings manually, for example, using the MoveNet network with the MULTIPOSE settings:
 ```js
 tracker.detectorModel = poseDetection.SupportedModels.MoveNet;
 tracker.detectorConfig = {
@@ -227,54 +223,50 @@ tracker.detectorConfig = {
 }
 tracker.minScore = 0.35;
 ```
-Network models differ in efficiency and accuracy, you can read more about the models of these neural networks on the Google website:
-
+The models differ in efficiency and accuracy. You can read more about these neural network models on the Google website:
 https://github.com/tensorflow/tfjs-models/tree/master/pose-detection
 
 
 **Input video source**
 
-You can define 3 different video sources:
+You can define three different video sources:
 
 - `camera`
 - `video`
 - `stream`
 
-To select a source, call the method `run()` with the source name passed as argument, e.g .:
-
+To select a source, call the method `run()` with the source name passed as an argument, e.g.:
 ```js
-tracker.run('camera') // takes video from webcam
+tracker.run('camera') // takes video from the webcam
 ```
 ```js
-tracker.run('video') // takes video from movie file (e.g. mp4)
+tracker.run('video') // takes video from a movie file (e.g., mp4)
 ```
 ```js
-tracker.run('stream') // takes video from m3u8 online stream
+tracker.run('stream') // takes video from an m3u8 online stream
 ```
 
-**DOM elements configuration**
+**DOM Elements Configuration**
 
-You need to define elements for video, canvas and for 3D output (only available for BlazePose model). To do this, set the appropriate values:
-
+You need to define elements for video, canvas, and for 3D output (only available for the BlazePose model). To do this, set the appropriate values:
 ```js
 tracker.elCanvas = '#canvas';
 tracker.elVideo = '#video';
 tracker.el3D = '#view_3d';
 ```
 
-**Display settings**
+**Display Settings**
 
-You can define the size of points drawed on canvas:
+You can define the size of points drawn on the canvas:
 
 ```js
-tracker.pointWidth = 6; // points connection width
+tracker.pointWidth = 6; // point connection width
 tracker.pointRadius = 8; // point circle radius
 ```
 
-**Events / hooks**
+**Events / Hooks**
 
-You can define your own functions that will handle, for example, points in the image detected by the neural network, the event / hook system is used for this. To define a hook, use the `on()` method. For example, to define a hook that will display all detected points in real-time live, write the following code:
-
+You can define your own functions to handle specific tasks, such as processing points in the image detected by the neural network. The event/hook system is used for this purpose. To define a hook, use the `on()` method. For example, to define a hook that displays all detected points in real-time, write the following code:
 ```js
 tracker.on('beforeupdate', function(poses) {
 	console.log(poses);
@@ -283,35 +275,28 @@ tracker.on('beforeupdate', function(poses) {
 
 The above code will make the console display a set of points detected in the image when rendering each frame.
 
-You can define hooks for 4 types of events:
+You can define hooks for five types of events:
 
-`beforeupdate` - hook executes before canvas render in every frame
+- `beforeupdate` - Executes before the canvas is rendered in every frame
+- `afterupdate` - Executes after the canvas is rendered in every frame
+- `statuschange` - Executes when the status changes
+- `detectorerror` - Executes when a detector error occurs
+- `videoerror` - Executes when a video/stream error occurs
 
-`afterupdate` - hook executes after canvas render in every frame
-
-`statuschange` - hook executes when status was changed
-
-`detectorerror` - hook executes when detector error occured
-
-`videoerror` - hook executes when video/stream error occured
-
-
-Defining a hook is as follows:
+Defining a hook is done as follows:
 
 ```js
 tracker.on('HOOK_TYPE', function(value) {
 	// do something with value
 });
 ```
-**3D pose estimation**
+**3D Pose Estimation**
 
-To display the detected points in 3D space, turn on the `enable3D` option, as shown below:
-
+To display the detected points in 3D space, enable the `enable3D` option, as shown below:
 ```js
 tracker.enable3D = true;
 ```
-A HTML element (e.g. div) must also be created, which will act as a container for the 3D output. To do this, define the element as below:
-
+An HTML element (e.g., a div) must also be created to act as a container for the 3D output. Define the element as shown below:
 ```html
 <body>
 	...
@@ -356,7 +341,7 @@ A HTML element (e.g. div) must also be created, which will act as a container fo
 
 
 
-The following options should be defined before calling `run()` method: `detectorModel`, `detectorConfig`, `elCanvas`, `elVideo`, `el3D`.
+The following options should be defined before calling the `run()` method: `detectorModel`, `detectorConfig`, `elCanvas`, `elVideo`, `el3D`.
 
 
 ___
@@ -367,7 +352,10 @@ ___
 
 
 ## Changelog
-**- 1.0.0** - published first release (2022-07-20)
+
+**1.0.0** -- First release published (2022-07-20)
+
+**1.0.1** -- Improved documentation (2024-08-26)
 
 
 --- 
